@@ -1,0 +1,276 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: #F9F9F9;
+}
+a{
+	text-decoration: none;
+}
+.link_button{
+	background:#EFEFEF;
+	padding: 2px 4px 2px 4px;
+	font-size: 12px;
+	margin-right: 4px;
+	border-radius: 3px 3px 3px 3px;
+}
+.link_button_red{
+	background:#BC0000;
+	padding: 2px 4px 2px 4px;
+	font-size: 12px;
+	margin-right: 4px;
+	border-radius: 3px 3px 3px 3px;
+}
+.link_button a{
+	color:#426DC9;
+}
+.link_button_red a{
+	color:#FFF;
+}
+.link_button_2{
+	background:#aaa;
+	padding: 2px 4px 2px 4px;
+	font-size: 12px;
+	margin-right: 4px;
+	border-radius: 3px 3px 3px 3px;
+}
+.link_button_2_red{
+	background:#BC0000;
+	padding: 2px 4px 2px 4px;
+	font-size: 12px;
+	margin-right: 4px;
+	border-radius: 3px 3px 3px 3px;
+}
+.link_button_2 a{
+	color:#FFF;
+}
+.link_button_2_red a{
+	color:#FFF;
+}
+.link_button_3{
+	background:#C00;
+	padding: 2px 4px 2px 4px;
+	font-size: 18px;
+	margin-right: 4px;
+	border-radius: 3px 3px 3px 3px;
+	color:white;
+}
+select{
+	border: 1px solid #e0e0e0;
+	padding: 2px;
+	border-radius: 3px 3px 3px 3px;
+	background: #fff;
+}
+input[type="button"], input[type="submit"], input[type="reset"], input[type="file"], button {
+	-webkit-box-align: center;
+	text-align: center;
+	cursor: default;
+	color: buttontext;
+	padding: 2px 6px 3px;
+	border: 2px outset buttonface;
+	border-image: initial;
+	background-color: buttonface;
+	box-sizing: border-box;
+}
+.a1{
+	width:100%;
+	border:1px solid #e0e0e0;
+}
+.a2{
+	background:#F0F0F0;
+	font-size:12px;
+	color:#333;
+	text-align:left;
+}
+.a3{
+	border-bottom:1px solid #e0e0e0;
+}
+.a4{
+	font-size:14px;
+	color:#333;
+	text-align:left;
+}
+.a5{
+	height:15px;
+}
+.a6{
+	background:#FFF;
+}
+.a7{
+	background:#FAFAFA;
+}
+.a8{
+	width:20px;padding:8px;
+}
+.a9{
+	padding-bottom:5px;
+	height:25px;
+}
+.a10{
+	width:26px;font-size:12px;text-align:center;
+}
+.a11{
+	color:#666;font-size:12px;
+}
+.a12{
+	padding-top:20px;font-size:16px;
+}
+.a13{
+	line-height:80px;font-size:24px;
+}
+.a14{
+	width:900px;margin:auto auto;
+}
+.a15{
+	padding:20px;background:#FFF;border:1px solid #e0e0e0;border-radius:4px 4px 4px 4px;
+}
+.a16{
+	padding-left:10px;padding-top:10px;
+}
+.a17{
+	padding-top:15px;padding-bottom:5px;
+}
+.a18{
+	font-size:14px;color:#333;line-height:25px;
+}
+.a19{
+	padding-left:30px;color:red;font-size:12px;
+}
+.a20{
+	height:100px;line-height:100px;font-size:24px;
+}
+.a20 a{
+	color:#3f3f3f;
+}
+.a20 a:hover{
+	color:#44f;
+}
+.a21{
+	width:150px;padding-right:10px;
+}
+.a22{
+	border-left:1px solid #ccc;padding-left:20px;
+}
+.a23{
+	padding-bottom:30px;
+}
+.a24{
+	font-size:11px;color:#888;line-height:20px;
+}
+.a25{
+	font-size:14px;color:#44f;text-decoratin:none;
+}
+.a25:hover{
+	color:#c00;
+}
+.a26{
+	font-size:14px;color:#888;padding-top:30px;
+}
+.a26{
+	cursor:pointer;
+}
+.a26 a:hover{
+	color:#c00;
+}
+.a27{
+	font-size:24px;padding-bottom:20px;
+}
+.left{
+	float:left;
+}
+.right{
+	float: right;
+}
+.lineheight25{
+	line-height:25px;
+}
+.paddingleft10{
+	padding-left:10px;
+}
+.paddingleft5{
+	padding-left:5px;	
+}
+.paddingleft30{
+	padding-left: 30px;
+}
+.paddingb{
+	padding:4px 8px;
+	cursor:pointer;
+}
+.rightmenucommon{
+	width:80px;line-height:40px;
+}
+.rightmenuchecked{
+	color:#C00;border-bottom:2px solid #c00;
+}
+.rightmenunochecked{
+	color:#426DC9;
+}
+.titlenochecked{
+	color:#426DC9;
+}
+.textaligncenter{
+	text-align:center;
+}
+.textalignleft{
+	text-align: left;
+}
+.fontsize24{
+	font-size: 24px;
+}
+.edit_textbox{
+	width: 99%;
+	border:1px solid #ccc;
+	font-size: 20px;
+	padding:3px 4px;
+	border-radius:3px;
+}
+.edit_textarea {
+	height: 400px;
+	width: 99%;
+	font-size: 13px;
+	border: solid 1px #CCC;
+	padding: 3px 4px;
+	border-radius: 3px;
+	resize: vertical;
+}
+.textbox {
+	width: 95%;
+	border: solid 1px #CCC;
+	padding: 4px;
+	border-radius: 3px;
+}
+.pt15{
+	padding-top:15px;
+}
+.pt40{
+	padding-top:40px;
+}
+.w150{
+	width:150px;
+}
+.w300{
+	width:300px;
+}
+.index_title {
+	font-weight: normal;
+	font-size: 24px;
+	color: #333;
+	text-shadow: 0 1px 0 white;
+	margin: 0;
+	padding: 0 0 10px 0;
+}
+.index_title a{
+	color: #333;
+}
+.index_title a:hover{
+	color: #44F;
+}
+.navbar a {
+	color: #44F;
+	font-size: 18px;
+	display: block;
+	padding-bottom: 20px;
+}
+.navbar a:hover {
+	color: #BC0000;
+}

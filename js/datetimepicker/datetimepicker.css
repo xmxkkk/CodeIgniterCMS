@@ -1,0 +1,35 @@
+.datetimepicker {
+}
+
+.datetimepicker input {
+	background-color: transparent;
+	border-width: 0 !important;
+	text-align: center !important;
+	-moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: auto;
+   -o-user-select: none;
+   user-select: none;
+}
+
+.datetimepicker input:focus {
+	/* hide WebKit outline (blue in OSX, orange in Windows) */
+	outline: none;
+}
+
+.datetimepicker .date, .datetimepicker .month, .datetimepicker .hours, .datetimepicker .minutes {
+	width: 2em !important;
+}
+
+.datetimepicker .year {
+	width: 4em !important;
+}
+
+.selected {
+	border-radius: 5px!important;
+	-webkit-border-radius: 5px!important;
+	-moz-border-radius: 5px!important;
+	border-radius: 5px!important;
+	background-color: #ccc!important;
+	color: #fff!important;
+}

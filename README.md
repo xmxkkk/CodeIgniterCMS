@@ -16,8 +16,11 @@ CodeIgniterCMS是一个基于CodeIgniter的内容管理系统。
   $db['default']['password'] = '';
   
   $db['default']['database'] = '';
+  
 3.支持中文和英文,通过修改/application/config/config.php
+  
   $config['language']  = 'english';//英文
+  
   $config['language']  = 'chinese';//中文
   
 

@@ -35,7 +35,7 @@
 						<?php
 							if($page>0){
 						?>
-							<a href="<?=site_url()?>/main/index/<?=$tag_?>/<?=$date_?>/<?=$prevpage?>" class="a25">←较新文章</a>
+							<a href="<?=site_url()?>/main/index/<?=$tag_?>/<?=$date_?>/<?=$prevpage?>" class="a25"><?=$this->lang->line("newer_posts")?></a>
 						<?php
 							}
 						?>
@@ -44,7 +44,7 @@
 						<?php
 							if($page<$lastpage){
 						?>
-							<a href="<?=site_url()?>/main/index/<?=$tag_?>/<?=$date_?>/<?=$nextpage?>" class="a25">早期文章→</a>
+							<a href="<?=site_url()?>/main/index/<?=$tag_?>/<?=$date_?>/<?=$nextpage?>" class="a25"><?=$this->lang->line("older_posts")?></a>
 						<?php
 							}
 						?>

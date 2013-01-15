@@ -24,7 +24,7 @@ class Admin extends CI_Controller {
 		$this->form_validation->set_rules("site_passwd","后台密码","trim|required|min_length[5]|matches[site_passwd_conf]|xss_clean");
 		$this->form_validation->set_rules("site_passwd_conf","确认密码","trim|required|min_length[5]|xss_clean");
 		
-
+		
 		$this->form_validation->set_message('required', '%s不能为空！');
 		$this->form_validation->set_message('matches', '%s和%s不一样！');
 		$this->form_validation->set_message('min_length', "%s不能少于%s位！");
@@ -144,7 +144,7 @@ class Admin extends CI_Controller {
 		$title=$this->input->post("title");
 		$content=$this->input->post("content");
 		$tags=$this->input->post("tags");
-		if($tags=="在此输入标签，多个标签用英语逗号（,）分割"){
+		if($tags==$this->lang->line('enterthelabel')){
 			$tags="";
 		}
 		$enable_comment=intval($this->input->post("enable_comment"));

@@ -3,7 +3,7 @@
 		<div id="content2">
 			<div class="a15">
 				<div>
-					<div class="fontsize24 left">撰写文章</div>
+					<div class="fontsize24 left"><?=$this->lang->line("writing_articles")?></div>
 					<div style="clear:both;"></div>
 				</div>
 				<div style="padding-top:15px;">
@@ -15,12 +15,25 @@
 					UE.getEditor("content");
 					</script>
 				</div>
+				<script>
+				$(function(){
+					$("input[name=tags]").focus(function(){
+						if($.trim($(this).val())=="<?=$this->lang->line('enterthelabel')?>"){
+							$(this).val("");
+						}
+					}).focusout(function(){
+						if($.trim($(this).val())==""){
+							$(this).val("<?=$this->lang->line('enterthelabel')?>");
+						}
+					});
+				});
+				</script>
 				<div style="padding-top:15px;">
-					<input type="text" name="tags" class="edit_textbox" style="color:#666" value="<?php echo $tags?"$tags":"在此输入标签，多个标签用英语逗号（,）分割";?>"/>
+					<input type="text" name="tags" class="edit_textbox" style="color:#666" value="<?php echo $tags?"$tags":$this->lang->line('enterthelabel')?>"/>
 				</div>
 				<div style="padding-top:15px;font-size:14px;">
 					<div class="left">
-						<div class="left">时间：</div>
+						<div class="left"><?=$this->lang->line("time")?>：</div>
 						<div class="left">
 							<script>
 							var str="<?=$datetime?>";
@@ -49,23 +62,23 @@
 					<div class="right">
 						<div class="right">
 							<select name="status">
-								<option value="1" <?php echo $status==1?"selected":"";?>>发布</option>
-								<option value="2" <?php echo $status==2?"selected":"";?>>草稿</option>
+								<option value="1" <?php echo $status==1?"selected":"";?>><?=$this->lang->line("publish")?></option>
+								<option value="2" <?php echo $status==2?"selected":"";?>><?=$this->lang->line("draft")?></option>
 							</select>
 						</div>
-						<div class="right">&nbsp;&nbsp;&nbsp;状态：</div>
+						<div class="right">&nbsp;&nbsp;&nbsp;<?=$this->lang->line("status")?>：</div>
 						<div class="right">
 							<select name="enable_comment">
-								<option value="1" <?php echo $enable_comment==1?"selected":"";?>>允许</option>
-								<option value="2" <?php echo $enable_comment==2?"selected":"";?>>禁用</option>
+								<option value="1" <?php echo $enable_comment==1?"selected":"";?>><?=$this->lang->line("allow")?></option>
+								<option value="2" <?php echo $enable_comment==2?"selected":"";?>><?=$this->lang->line("forbid")?></option>
 							</select>
 						</div>
-						<div class="right">评论：</div>
+						<div class="right"><?=$this->lang->line("comment")?>：</div>
 					</div>
 					<div style="clear:both;"></div>
 				</div>
 				<div style="padding-top:15px;">
-					<input type="submit" value="保存" class="right"/>
+					<input type="submit" value="<?=$this->lang->line("save")?>" class="right"/>
 					<div style="clear:both;"></div>
 				</div>
 			</div>

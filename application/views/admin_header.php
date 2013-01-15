@@ -32,9 +32,9 @@ $site_name=$rows[0]->t_value;
 			</div>
 			<div class="right">
 				<div class="a12">
-					<a href="<?=site_url()?>/admin/manager" class="left"><div class="rightmenucommon <?php echo $menu==1?"rightmenuchecked":"rightmenunochecked";?>">文章</div></a>
-					<a href="<?=site_url()?>/admin/page" class="left"><div class="rightmenucommon <?php echo $menu==2?"rightmenuchecked":"rightmenunochecked";?>">页面</div></a>
-					<a href="<?=site_url()?>/admin/setting" class="left"><div class="rightmenucommon <?php echo $menu==3?"rightmenuchecked":"rightmenunochecked";?>">设置</div></a>
+					<a href="<?=site_url()?>/admin/manager" class="left"><div class="rightmenucommon <?php echo $menu==1?"rightmenuchecked":"rightmenunochecked";?>"><?=$this->lang->line("article")?></div></a>
+					<a href="<?=site_url()?>/admin/page" class="left"><div class="rightmenucommon <?php echo $menu==2?"rightmenuchecked":"rightmenunochecked";?>"><?=$this->lang->line("page")?></div></a>
+					<a href="<?=site_url()?>/admin/setting" class="left"><div class="rightmenucommon <?php echo $menu==3?"rightmenuchecked":"rightmenunochecked";?>"><?=$this->lang->line("setting")?></div></a>
 					<div style="clear:both;"></div>
 				</div>
 			</div>

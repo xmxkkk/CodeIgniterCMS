@@ -3,7 +3,7 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>SimpleCMS</title>
+  <title>CodeIgnitorCMS</title>
   <style type="text/css">
 * { font-family:"Microsoft YaHei",Segoe UI,Tahoma,Arial,Verdana,sans-serif; }
 body { background:#f9f9f9; font-size:14px; }
@@ -19,14 +19,14 @@ body { background:#f9f9f9; font-size:14px; }
 </head>
 <body>
   <form action="<?=site_url()?>/login/loginAction" method="post">
-  <div id="login_title">SimpleCMS</div>
+  <div id="login_title">CodeIgnitorCMS</div>
   <div id="login_form">
     <div id="login_form_box">
-      <div class="label">帐号</div>
+      <div class="label"><?=$this->lang->line("account")?></div>
       <div class="textbox"><input name="user" type="text" /></div>
-      <div class="label">密码</div>
+      <div class="label"><?=$this->lang->line("password")?></div>
       <div class="textbox"><input name="pass" type="password" /></div>
-      <div class="bottom"><input name="login" type="submit" value="登录" class="button" /></div>
+      <div class="bottom"><input name="login" type="submit" value="<?=$this->lang->line("login")?>" class="button" /></div>
     </div>
   </div>
   </form>

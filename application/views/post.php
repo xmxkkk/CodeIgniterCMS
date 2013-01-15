@@ -3,45 +3,45 @@
 		<div id="content">
 			<div class="a15">
 				<div>
-					<div class="fontsize24 left">管理文章</div>
+					<div class="fontsize24 left"><?=$this->lang->line("management_articles")?></div>
 					<div class="a16 left">
-						<div class="link_button"><a href="<?=site_url()?>/admin/addPost">撰写文章</a></div>
+						<div class="link_button"><a href="<?=site_url()?>/admin/addPost"><?=$this->lang->line('writing_articles')?></a></div>
 					</div>
 					<div style="clear:both;"></div>
 				</div>
 				<div class="a17">
-					<div class="<?php echo $status==1?"link_button_red":"link_button";?> left"><a href="<?=site_url()?>/admin/post/1/_/_/0">已发布</a></div>
-					<div class="<?php echo $status==2?"link_button_red":"link_button";?> left"><a href="<?=site_url()?>/admin/post/2/_/_/0">草稿箱</a></div>
-					<div class="<?php echo $status==3?"link_button_red":"link_button";?> left"><a href="<?=site_url()?>/admin/post/3/_/_/0">回收站</a></div>
+					<div class="<?php echo $status==1?"link_button_red":"link_button";?> left"><a href="<?=site_url()?>/admin/post/1/_/_/0"><?=$this->lang->line("published")?></a></div>
+					<div class="<?php echo $status==2?"link_button_red":"link_button";?> left"><a href="<?=site_url()?>/admin/post/2/_/_/0"><?=$this->lang->line("drafts")?></a></div>
+					<div class="<?php echo $status==3?"link_button_red":"link_button";?> left"><a href="<?=site_url()?>/admin/post/3/_/_/0"><?=$this->lang->line("recycle_bin")?></a></div>
 					<div style="clear:both;"></div>
 				</div>
 				<div class="textalignleft">
 					<div class="left">
 						<select name="method">
-							<option value="1">批量操作</option>
+							<option value="1"><?=$this->lang->line("bulk_operations")?></option>
 							<?php if($status==3):?>
-							<option value="delete">删除</option>
-							<option value="publish">还原</option>
+							<option value="delete"><?=$this->lang->line("delete")?></option>
+							<option value="publish"><?=$this->lang->line("revert")?></option>
 							<?php else:?>
-							<option value="recycle">回收</option>
+							<option value="recycle"><?=$this->lang->line("recycle")?></option>
 							<?php endif;?>
 						</select>
-						<input type="submit" value="应用"/>
+						<input type="submit" value="<?=$this->lang->line("apply")?>"/>
 					</div>
 					<div class="left paddingleft30">
 						<select name="date" onchange="choose('<?=site_url()?>/admin/post/<?=$status?>/');">
-							<option value="_" <?php echo $date_=="_"?"selected":"";?>>显示所有日期</option>
+							<option value="_" <?php echo $date_=="_"?"selected":"";?>><?=$this->lang->line("all_dates")?></option>
 							<?php foreach($date as $item):?>
 							<option value="<?=$item->df_tm?>" <?php echo $date_==$item->df_tm?"selected":"";?>><?=$item->df_tm?></option>
 							<?php endforeach;?>
 						</select>
 						<select name="tag" onchange="choose('<?=site_url()?>/admin/post/<?=$status?>/');">
-							<option value="_" <?php echo $tag_=="_"?"selected":"";?>>显示所有标签</option>
+							<option value="_" <?php echo $tag_=="_"?"selected":"";?>><?=$this->lang->line("all_labels")?></option>
 							<?php foreach($tags as $item):?>
 							<option value="<?=$item->tag?>" <?php echo $tag_==$item->tag?"selected":"";?>><?=$item->tag?></option>
 							<?php endforeach;?>
 						</select>
-						<a id="get" href="<?=site_url()?>/admin/post/<?=$status?>/<?=$tag_?>/<?=$date_?>/0"><input type="button" value="筛选"/></a>
+						<a id="get" href="<?=site_url()?>/admin/post/<?=$status?>/<?=$tag_?>/<?=$date_?>/0"><input type="button" value="<?=$this->lang->line("filter")?>"/></a>
 					</div>
 					<div class="right a11">
 						<div class="left lineheight25">共 <?=$cnt?> 项</div>
@@ -58,9 +58,9 @@
 					<table id="list" colspan=0 rowspan=0 cellpadding=0 cellspacing=0 class="a1">
 						<tr class="a2">
 							<td class="a3 a8"><input type="checkbox" name="opids"/></td>
-							<td class="a3">标题</td>
-							<td class="a3" style="width:25%;">分类</td>
-							<td class="a3" style="width:15%;">时间</td>
+							<td class="a3"><?=$this->lang->line("title")?></td>
+							<td class="a3" style="width:25%;"><?=$this->lang->line("label")?></td>
+							<td class="a3" style="width:15%;"><?=$this->lang->line("time")?></td>
 						</tr>
 						<?php for($i=0;$i<count($list);$i++):
 									$id=$list[$i]->id;
@@ -86,13 +86,14 @@
 						<tr class="a4 a5 <?=$color?>">
 							<td class="a3"></td>
 							<td class="a3 a9">
-								<div class="link_button left" style="display:none;"><a href="<?=site_url()?>/admin/addPost/<?=$id?>">编辑</a></div>
+								<div class="link_button left" style="display:none;"><a href="<?=site_url()?>/admin/addPost/<?=$id?>"><?=$this->lang->line("edit")?></a></div>
 								<?php if(intval($status)==3):?>
-								<div class="link_button left" style="display:none;"><a href="<?=site_url()?>/admin/recycle/post/<?=$status?>/<?=$id?>/publish">还原</a></div>
-								<div class="link_button left" style="display:none;"><a href="<?=site_url()?>/admin/recycle/post/<?=$status?>/<?=$id?>/delete">删除</a></div>
+								<div class="link_button left" style="display:none;"><a href="<?=site_url()?>/admin/recycle/post/<?=$status?>/<?=$id?>/publish"><?=$this->lang->line("revert")?></a></div>
+								<div class="link_button left" style="display:none;"><a href="<?=site_url()?>/admin/recycle/post/<?=$status?>/<?=$id?>/delete"><?=$this->lang->line("delete")?></a></div>
 								<?php else:?>
-								<div class="link_button left" style="display:none;"><a href="<?=site_url()?>/admin/recycle/post/<?=$status?>/<?=$id?>">回收</a></div>								<?php endif;?>
-								<div class="link_button left" style="display:none;"><a href="<?=site_url()?>/main/detail/<?=$id?>">查看</a></div>
+								<div class="link_button left" style="display:none;"><a href="<?=site_url()?>/admin/recycle/post/<?=$status?>/<?=$id?>"><?=$this->lang->line("recycle")?></a></div>								
+								<?php endif;?>
+								<div class="link_button left" style="display:none;"><a href="<?=site_url()?>/main/detail/<?=$id?>"><?=$this->lang->line("view")?></a></div>
 							</td>
 							<td class="a3"></td>
 							<td class="a3"></td>
@@ -101,24 +102,24 @@
 						
 						<tr class="a2">
 							<td class="a8"><input type="checkbox" name="opids"/></td>
-							<td>标题</td>
-							<td style="width:25%;">分类</td>
-							<td style="width:15%;">时间</td>
+							<td><?=$this->lang->line("title")?></td>
+							<td style="width:25%;"><?=$this->lang->line("label")?></td>
+							<td style="width:15%;"><?=$this->lang->line("time")?></td>
 						</tr>
 					</table>
 				</div>
 				<div class="textalignleft" style="padding-top:5px;">
 					<div class="left">
 						<select name="method">
-							<option value="1">批量操作</option>
+							<option value="1"><?=$this->lang->line("bulk_operations")?></option>
 							<?php if($status==3):?>
-							<option value="delete">删除</option>
-							<option value="publish">还原</option>
+							<option value="delete"><?=$this->lang->line("delete")?></option>
+							<option value="publish"><?=$this->lang->line("revert")?></option>
 							<?php else:?>
-							<option value="recycle">回收</option>
+							<option value="recycle"><?=$this->lang->line("recycle")?></option>
 							<?php endif;?>
 						</select>
-						<input type="submit" value="应用"/>
+						<input type="submit" value="<?=$this->lang->line("apply")?>"/>
 					</div>
 					<div class="right a11">
 						<div class="left lineheight25">共 <?=$cnt?> 项</div>

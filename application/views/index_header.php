@@ -25,9 +25,9 @@ $query_page_rows=$query_page->result();
 		</div>
 		<div>
 			<div class="left textalignleft a21" >
-				<div class="navbar"><a href="<?=site_url()?>">首页</a></div>
-				<div class="navbar"><a href="<?=site_url()?>/main/archive">存档</a></div>
-				<div class="navbar"><a href="<?=site_url()?>/main/rss">订阅</a></div>
+				<div class="navbar"><a href="<?=site_url()?>"><?=$this->lang->line("index")?></a></div>
+				<div class="navbar"><a href="<?=site_url()?>/main/archive"><?=$this->lang->line("archive")?></a></div>
+				<div class="navbar"><a href="<?=site_url()?>/main/rss"><?=$this->lang->line("rss")?></a></div>
 				<?php foreach($query_page_rows as $row):?>
 				<div class="navbar"><a href="<?=site_url()?>/main/detail/<?=$row->id?>"><?=$row->title?></a></div>
 				<?php endforeach;?>

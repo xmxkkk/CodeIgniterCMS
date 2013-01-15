@@ -63,15 +63,7 @@ $(function(){
 			});
 		});
 	});
-	$("input[name=tags]").focus(function(){
-		if($.trim($(this).val())=="在此输入标签，多个标签用英语逗号（,）分割"){
-			$(this).val("");
-		}
-	}).focusout(function(){
-		if($.trim($(this).val())==""){
-			$(this).val("在此输入标签，多个标签用英语逗号（,）分割");
-		}
-	});
+	
 });
 function choose(base_url){
 	tag=$("select[name=tag]").val();

@@ -17,13 +17,18 @@
 					<div class="textalignleft" style="font-size:14px;padding-bottom:30px;">
 						<?=$list[$i]->content?>
 					</div>
-					<!-- UY BEGIN -->
-					<div id="uyan_frame"></div>
-					<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
-					<!-- UY END -->
+					<?php
+						if(intval($list[$i]->enable_comment)==1){
+					?>
+							<!-- UY BEGIN -->
+							<div id="uyan_frame"></div>
+							<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
+							<!-- UY END -->
+					<?php
+						}
+					?>
+					
 					<?php endfor;?>
-
-
 				</div>
 				
 			</div>

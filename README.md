@@ -56,6 +56,6 @@ Install：
   
   $config['language']  = 'chinese';//Chinese
   
-4.the manager url:
+4.the manager url
 
   http://url/index.php/admin

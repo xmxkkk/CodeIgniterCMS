@@ -10,9 +10,17 @@
 					<input type="text" name="title" class="edit_textbox" value="<?=$title?>"/>
 				</div>
 				<div style="padding-top:15px;">
+					<?php
+					$lang=$this->config->item("language");
+					if($lang=="chinese"){
+						$lang="zh-cn";
+					}else{
+						$lang="en";
+					}
+					?>
 					<script type="text/plain" id="content" name="content" class="textalignleft"><?=$content?></script>
 					<script>
-					UE.getEditor("content");
+					UE.getEditor("content",{lang:"<?=$lang?>"});
 					</script>
 				</div>
 				<div style="padding-top:15px;font-size:14px;">

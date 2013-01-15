@@ -20,10 +20,10 @@
 					<?php
 						if(intval($list[$i]->enable_comment)==1){
 					?>
-							<!-- UY BEGIN -->
-							<div id="uyan_frame"></div>
-							<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
-							<!-- UY END -->
+						<!-- UY BEGIN -->
+						<div id="uyan_frame"></div>
+						<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1669935" async=""></script>
+						<!-- UY END -->
 					<?php
 						}
 					?>

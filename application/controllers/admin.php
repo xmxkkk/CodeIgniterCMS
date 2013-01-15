@@ -12,6 +12,10 @@ class Admin extends CI_Controller {
 			header("location:".site_url()."/login/login1");
 		}
 	}
+	function lang()
+	{
+		
+	}
 
 	public function update_admin()
 	{

@@ -25,6 +25,10 @@ CodeIgniterCMS是一个基于CodeIgniter的内容管理系统。
   
   $config['language']  = 'chinese';//中文
   
+4.管理后台地址
+
+  http://地址/index.php/admin
+  
 
 -----------------------
 
@@ -51,3 +55,7 @@ Install：
   $config['language']  = 'english';//English
   
   $config['language']  = 'chinese';//Chinese
+  
+4.the manager url:
+
+  http://url/index.php/admin

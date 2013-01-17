@@ -32,7 +32,7 @@ CodeIgniterCMS是一个基于CodeIgniter的内容管理系统。
 
 -----------------------
 
-Chinese Introduction
+English Introduction
 
 CodeIgniterCMS is Content Management System ,it's based on CodeIgniter.
 

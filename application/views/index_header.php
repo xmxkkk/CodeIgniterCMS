@@ -13,9 +13,9 @@ $query_page_rows=$query_page->result();
 	<title><?=$site_name?></title>
 	<meta name="keywords" content="<?=$keywords?>"/>
 	<meta name="description" content="<?=$description?>"/>
-	<link rel="stylesheet" type="text/css" href="http://127.0.0.1:8089/simplecms/css/style.css">
-	<script src="http://127.0.0.1:8089/simplecms/js/jquery-1.8.3.min.js"></script>
-	<script src="http://127.0.0.1:8089/simplecms/js/javascript.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/style.css">
+	<script src="<?php echo base_url();?>js/jquery-1.8.3.min.js"></script>
+	<script src="<?php echo base_url();?>js/javascript.js"></script>
 </head>
 <body>
 <div class="textaligncenter">

@@ -1,5 +1,5 @@
 <?php $this->load->view("admin_header");?>
-		<form method="post" action="<?php echo site_url()?>/admin/edit/<?php echo $id?>">
+		<form method="post" action="<?php echo site_url("/admin/edit/".$id)?>">
 		<div id="content2">
 			<div class="a15">
 				<div>

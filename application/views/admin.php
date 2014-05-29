@@ -4,7 +4,7 @@
 				<div>
 					<div class="fontsize24 left">管理文章</div>
 					<div class="a16 left">
-						<div class="link_button"><a href="<?php echo site_url()?>/admin/addPost">撰写文章</a></div>
+						<div class="link_button"><a href="<?php echo site_url("admin/addPost")?>">撰写文章</a></div>
 					</div>
 					<div style="clear:both;"></div>
 				</div>
@@ -67,7 +67,7 @@
 						?>
 						<tr class="a4 <?php echo $color?>">
 							<td class="a8"><input type="checkbox" name="opids"/></td>
-							<td style=""><a href="<?php echo site_url()?>/admin/addPost/<?php echo $id?>" class="rightmenunochecked"><?php echo $list[$i]->title;?></a></td>
+							<td style=""><a href="<?php echo site_url("admin/addPost".$id)?>" class="rightmenunochecked"><?php echo $list[$i]->title;?></a></td>
 							<td style="width:25%;">
 								<?php for($j=0;$j<count($list[$i]->tags);$j++):
 											$tags=$list[$i]->tags;

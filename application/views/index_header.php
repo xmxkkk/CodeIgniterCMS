@@ -26,10 +26,10 @@ $query_page_rows=$query_page->result();
 		<div>
 			<div class="left textalignleft a21" >
 				<div class="navbar"><a href="<?php echo site_url()?>"><?php echo $this->lang->line("index")?></a></div>
-				<div class="navbar"><a href="<?php echo site_url()?>/main/archive"><?php echo $this->lang->line("archive")?></a></div>
-				<div class="navbar"><a href="<?php echo site_url()?>/main/rss"><?php echo $this->lang->line("rss")?></a></div>
+				<div class="navbar"><a href="<?php echo site_url("main/archive")?>"><?php echo $this->lang->line("archive")?></a></div>
+				<div class="navbar"><a href="<?php echo site_url("main/rss")?>"><?php echo $this->lang->line("rss")?></a></div>
 				<?php foreach($query_page_rows as $row):?>
-				<div class="navbar"><a href="<?php echo site_url()?>/main/detail/<?php echo $row->id?>"><?php echo $row->title?></a></div>
+				<div class="navbar"><a href="<?php echo site_url("main/detail/".$row->id)?>"><?php echo $row->title?></a></div>
 				<?php endforeach;?>
 			</div>
 			

@@ -32,9 +32,9 @@ $site_name=$rows[0]->t_value;
 			</div>
 			<div class="right">
 				<div class="a12">
-					<a href="<?php echo site_url()?>/admin/manager" class="left"><div class="rightmenucommon <?php echo $menu==1?"rightmenuchecked":"rightmenunochecked";?>"><?php echo $this->lang->line("article")?></div></a>
-					<a href="<?php echo site_url()?>/admin/page" class="left"><div class="rightmenucommon <?php echo $menu==2?"rightmenuchecked":"rightmenunochecked";?>"><?php echo $this->lang->line("page")?></div></a>
-					<a href="<?php echo site_url()?>/admin/setting" class="left"><div class="rightmenucommon <?php echo $menu==3?"rightmenuchecked":"rightmenunochecked";?>"><?php echo $this->lang->line("setting")?></div></a>
+					<a href="<?php echo site_url("admin/manager")?>" class="left"><div class="rightmenucommon <?php echo $menu==1?"rightmenuchecked":"rightmenunochecked";?>"><?php echo $this->lang->line("article")?></div></a>
+					<a href="<?php echo site_url("admin/page")?>" class="left"><div class="rightmenucommon <?php echo $menu==2?"rightmenuchecked":"rightmenunochecked";?>"><?php echo $this->lang->line("page")?></div></a>
+					<a href="<?php echo site_url("admin/setting")?>" class="left"><div class="rightmenucommon <?php echo $menu==3?"rightmenuchecked":"rightmenunochecked";?>"><?php echo $this->lang->line("setting")?></div></a>
 					<div style="clear:both;"></div>
 				</div>
 			</div>

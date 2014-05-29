@@ -3,13 +3,13 @@
 				<div>
 					<?php for($i=0;$i<count($list);$i++):?>
 					<div class="index_title textalignleft">
-						<a href="<?php echo site_url()?>/main/detail/<?php echo $list[$i]->id?>"><?php echo $list[$i]->title?></a>
+						<a href="<?php echo site_url("main/detail/".$list[$i]->id)?>"><?php echo $list[$i]->title?></a>
 					</div>
 					<div class="a23" style="padding-bottom:10px;">
 						<?php for($j=0;$j<count($list[$i]->tags);$j++):
 									$tags=$list[$i]->tags;
 						?>
-						<div class="link_button_2 left"><a href="<?php echo site_url()?>/main/index/<?php echo $tags[$j]->tag?>/_"><?php echo $tags[$j]->tag?></a></div>
+						<div class="link_button_2 left"><a href="<?php echo site_url("main/index/".$tags[$j]->tag."/_")?>"><?php echo $tags[$j]->tag?></a></div>
 						<?php endfor;?>
 						<div class="left a24">by <?php echo $site_username?> at <?php echo substr($list[$i]->pub_time,0,10);?></div>
 						<div style="clear:both;"></div>

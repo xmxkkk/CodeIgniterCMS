@@ -1,18 +1,18 @@
 <?php $this->load->view("admin_header");?>
-		<form method="post" action="<?php echo site_url()?>/admin/recycle/page">
+		<form method="post" action="<?php echo site_url("admin/recycle/page")?>">
 		<div id="content">
 			<div class="a15">
 				<div>
 					<div class="fontsize24 left"><?php echo $this->lang->line("management_page")?></div>
 					<div class="a16 left">
-						<div class="link_button"><a href="<?php echo site_url()?>/admin/addPage"><?php echo $this->lang->line('writing_page')?></a></div>
+						<div class="link_button"><a href="<?php echo site_url("admin/addPage")?>"><?php echo $this->lang->line('writing_page')?></a></div>
 					</div>
 					<div style="clear:both;"></div>
 				</div>
 				<div class="a17">
-					<div class="<?php echo $status==1?"link_button_red":"link_button";?> left"><a href="<?php echo site_url()?>/admin/page/1/_/_/0"><?php echo $this->lang->line("published")?></a></div>
-					<div class="<?php echo $status==2?"link_button_red":"link_button";?> left"><a href="<?php echo site_url()?>/admin/page/2/_/_/0"><?php echo $this->lang->line("drafts")?></a></div>
-					<div class="<?php echo $status==3?"link_button_red":"link_button";?> left"><a href="<?php echo site_url()?>/admin/page/3/_/_/0"><?php echo $this->lang->line("recycle_bin")?></a></div>
+					<div class="<?php echo $status==1?"link_button_red":"link_button";?> left"><a href="<?php echo site_url("admin/page/1/_/_/0")?>"><?php echo $this->lang->line("published")?></a></div>
+					<div class="<?php echo $status==2?"link_button_red":"link_button";?> left"><a href="<?php echo site_url("admin/page/2/_/_/0")?>"><?php echo $this->lang->line("drafts")?></a></div>
+					<div class="<?php echo $status==3?"link_button_red":"link_button";?> left"><a href="<?php echo site_url("admin/page/3/_/_/0")?>"><?php echo $this->lang->line("recycle_bin")?></a></div>
 					<div style="clear:both;"></div>
 				</div>
 				<div class="textalignleft">
@@ -29,13 +29,13 @@
 						<input type="submit" value="<?php echo $this->lang->line("apply")?>"/>
 					</div>
 					<div class="left paddingleft30">
-						<select name="date" onchange="choose('<?php echo site_url()?>/admin/page/<?php echo $status?>/');">
+						<select name="date" onchange="choose('<?php echo site_url("admin/page/".$status)?>');">
 							<option value="_" <?php echo $date_=="_"?"selected":"";?>><?php echo $this->lang->line("all_dates")?></option>
 							<?php foreach($date as $item):?>
 							<option value="<?php echo $item->df_tm?>" <?php echo $date_==$item->df_tm?"selected":"";?>><?php echo $item->df_tm?></option>
 							<?php endforeach;?>
 						</select>
-						<a id="get" href="<?php echo site_url()?>/admin/page/<?php echo $status?>/_/<?php echo $date_?>/0"><input type="button" value="<?php echo $this->lang->line("filter")?>"/></a>
+						<a id="get" href="<?php echo site_url("/admin/page/$status/_/$date_/0")?>"><input type="button" value="<?php echo $this->lang->line("filter")?>"/></a>
 					</div>
 					<div class="right a11">
 						<div class="left lineheight25">共 <?php echo $cnt?> 项</div>

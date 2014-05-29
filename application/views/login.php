@@ -18,15 +18,15 @@ body { background:#f9f9f9; font-size:14px; }
   </style>
 </head>
 <body>
-  <form action="<?=site_url()?>/login/loginAction" method="post">
+  <form action="<?php echo site_url()?>/login/loginAction" method="post">
   <div id="login_title">CodeIgnitorCMS</div>
   <div id="login_form">
     <div id="login_form_box">
-      <div class="label"><?=$this->lang->line("account")?></div>
+      <div class="label"><?php echo $this->lang->line("account")?></div>
       <div class="textbox"><input name="user" type="text" /></div>
-      <div class="label"><?=$this->lang->line("password")?></div>
+      <div class="label"><?php echo $this->lang->line("password")?></div>
       <div class="textbox"><input name="pass" type="password" /></div>
-      <div class="bottom"><input name="login" type="submit" value="<?=$this->lang->line("login")?>" class="button" /></div>
+      <div class="bottom"><input name="login" type="submit" value="<?php echo $this->lang->line("login")?>" class="button" /></div>
     </div>
   </div>
   </form>

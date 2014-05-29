@@ -21,15 +21,15 @@ $query_page_rows=$query_page->result();
 <div class="textaligncenter">
 	<div class="a14" style="width:960px;">
 		<div class="a20 textalignleft" style="font-size:28px;">
-			<a href="<?=site_url()?>"><?=$site_name?></a>
+			<a href="<?php echo site_url()?>"><?=$site_name?></a>
 		</div>
 		<div>
 			<div class="left textalignleft a21" >
-				<div class="navbar"><a href="<?=site_url()?>"><?=$this->lang->line("index")?></a></div>
-				<div class="navbar"><a href="<?=site_url()?>/main/archive"><?=$this->lang->line("archive")?></a></div>
-				<div class="navbar"><a href="<?=site_url()?>/main/rss"><?=$this->lang->line("rss")?></a></div>
+				<div class="navbar"><a href="<?php echo site_url()?>"><?php echo $this->lang->line("index")?></a></div>
+				<div class="navbar"><a href="<?php echo site_url()?>/main/archive"><?php echo $this->lang->line("archive")?></a></div>
+				<div class="navbar"><a href="<?php echo site_url()?>/main/rss"><?php echo $this->lang->line("rss")?></a></div>
 				<?php foreach($query_page_rows as $row):?>
-				<div class="navbar"><a href="<?=site_url()?>/main/detail/<?=$row->id?>"><?=$row->title?></a></div>
+				<div class="navbar"><a href="<?php echo site_url()?>/main/detail/<?php echo $row->id?>"><?php echo $row->title?></a></div>
 				<?php endforeach;?>
 			</div>
 			

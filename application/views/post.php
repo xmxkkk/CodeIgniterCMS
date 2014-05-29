@@ -1,55 +1,55 @@
 <?php $this->load->view("admin_header");?>
-		<form method="post" action="<?=site_url()?>/admin/recycle/post">
+		<form method="post" action="<?php echo site_url()?>/admin/recycle/post">
 		<div id="content">
 			<div class="a15">
 				<div>
-					<div class="fontsize24 left"><?=$this->lang->line("management_articles")?></div>
+					<div class="fontsize24 left"><?php echo $this->lang->line("management_articles")?></div>
 					<div class="a16 left">
-						<div class="link_button"><a href="<?=site_url()?>/admin/addPost"><?=$this->lang->line('writing_articles')?></a></div>
+						<div class="link_button"><a href="<?php echo site_url()?>/admin/addPost"><?php echo $this->lang->line('writing_articles')?></a></div>
 					</div>
 					<div style="clear:both;"></div>
 				</div>
 				<div class="a17">
-					<div class="<?php echo $status==1?"link_button_red":"link_button";?> left"><a href="<?=site_url()?>/admin/post/1/_/_/0"><?=$this->lang->line("published")?></a></div>
-					<div class="<?php echo $status==2?"link_button_red":"link_button";?> left"><a href="<?=site_url()?>/admin/post/2/_/_/0"><?=$this->lang->line("drafts")?></a></div>
-					<div class="<?php echo $status==3?"link_button_red":"link_button";?> left"><a href="<?=site_url()?>/admin/post/3/_/_/0"><?=$this->lang->line("recycle_bin")?></a></div>
+					<div class="<?php echo $status==1?"link_button_red":"link_button";?> left"><a href="<?php echo site_url()?>/admin/post/1/_/_/0"><?php echo $this->lang->line("published")?></a></div>
+					<div class="<?php echo $status==2?"link_button_red":"link_button";?> left"><a href="<?php echo site_url()?>/admin/post/2/_/_/0"><?php echo $this->lang->line("drafts")?></a></div>
+					<div class="<?php echo $status==3?"link_button_red":"link_button";?> left"><a href="<?php echo site_url()?>/admin/post/3/_/_/0"><?php echo $this->lang->line("recycle_bin")?></a></div>
 					<div style="clear:both;"></div>
 				</div>
 				<div class="textalignleft">
 					<div class="left">
 						<select name="method">
-							<option value="1"><?=$this->lang->line("bulk_operations")?></option>
+							<option value="1"><?php echo $this->lang->line("bulk_operations")?></option>
 							<?php if($status==3):?>
-							<option value="delete"><?=$this->lang->line("delete")?></option>
-							<option value="publish"><?=$this->lang->line("revert")?></option>
+							<option value="delete"><?php echo $this->lang->line("delete")?></option>
+							<option value="publish"><?php echo $this->lang->line("revert")?></option>
 							<?php else:?>
-							<option value="recycle"><?=$this->lang->line("recycle")?></option>
+							<option value="recycle"><?php echo $this->lang->line("recycle")?></option>
 							<?php endif;?>
 						</select>
-						<input type="submit" value="<?=$this->lang->line("apply")?>"/>
+						<input type="submit" value="<?php echo $this->lang->line("apply")?>"/>
 					</div>
 					<div class="left paddingleft30">
-						<select name="date" onchange="choose('<?=site_url()?>/admin/post/<?=$status?>/');">
-							<option value="_" <?php echo $date_=="_"?"selected":"";?>><?=$this->lang->line("all_dates")?></option>
+						<select name="date" onchange="choose('<?php echo site_url()?>/admin/post/<?php echo $status?>/');">
+							<option value="_" <?php echo $date_=="_"?"selected":"";?>><?php echo $this->lang->line("all_dates")?></option>
 							<?php foreach($date as $item):?>
-							<option value="<?=$item->df_tm?>" <?php echo $date_==$item->df_tm?"selected":"";?>><?=$item->df_tm?></option>
+							<option value="<?php echo $item->df_tm?>" <?php echo $date_==$item->df_tm?"selected":"";?>><?php echo $item->df_tm?></option>
 							<?php endforeach;?>
 						</select>
-						<select name="tag" onchange="choose('<?=site_url()?>/admin/post/<?=$status?>/');">
-							<option value="_" <?php echo $tag_=="_"?"selected":"";?>><?=$this->lang->line("all_labels")?></option>
+						<select name="tag" onchange="choose('<?php echo site_url()?>/admin/post/<?php echo $status?>/');">
+							<option value="_" <?php echo $tag_=="_"?"selected":"";?>><?php echo $this->lang->line("all_labels")?></option>
 							<?php foreach($tags as $item):?>
-							<option value="<?=$item->tag?>" <?php echo $tag_==$item->tag?"selected":"";?>><?=$item->tag?></option>
+							<option value="<?php echo $item->tag?>" <?php echo $tag_==$item->tag?"selected":"";?>><?php echo $item->tag?></option>
 							<?php endforeach;?>
 						</select>
-						<a id="get" href="<?=site_url()?>/admin/post/<?=$status?>/<?=$tag_?>/<?=$date_?>/0"><input type="button" value="<?=$this->lang->line("filter")?>"/></a>
+						<a id="get" href="<?php echo site_url()?>/admin/post/<?php echo $status?>/<?php echo $tag_?>/<?php echo $date_?>/0"><input type="button" value="<?php echo $this->lang->line("filter")?>"/></a>
 					</div>
 					<div class="right a11">
-						<div class="left lineheight25">共 <?=$cnt?> 项</div>
-						<div class="left paddingleft10"><a href="<?=site_url()?>/admin/post/<?=$status?>/<?=$tag_?>/<?=$date_?>/<?=0?>"><div class="link_button paddingb">«</div></a></div>
-						<div class="left paddingleft5"><a href="<?=site_url()?>/admin/post/<?=$status?>/<?=$tag_?>/<?=$date_?>/<?=$prevpage?>"><div class="link_button paddingb">‹</div></a></div>
-						<div class="left lineheight25">第 <?=$currentpage?> 页,共 <?=$totalpage?> 页</div>
-						<div class="left paddingleft5"><a href="<?=site_url()?>/admin/post/<?=$status?>/<?=$tag_?>/<?=$date_?>/<?=$nextpage?>"><div class="link_button paddingb">›</div></a></div>
-						<div class="left paddingleft5"><a href="<?=site_url()?>/admin/post/<?=$status?>/<?=$tag_?>/<?=$date_?>/<?=$lastpage?>"><div class="link_button paddingb">»</div></a></div>
+						<div class="left lineheight25">共 <?php echo $cnt?> 项</div>
+						<div class="left paddingleft10"><a href="<?php echo site_url()?>/admin/post/<?php echo $status?>/<?php echo $tag_?>/<?php echo $date_?>/<?php echo 0?>"><div class="link_button paddingb">«</div></a></div>
+						<div class="left paddingleft5"><a href="<?php echo site_url()?>/admin/post/<?php echo $status?>/<?php echo $tag_?>/<?php echo $date_?>/<?php echo $prevpage?>"><div class="link_button paddingb">‹</div></a></div>
+						<div class="left lineheight25">第 <?php echo $currentpage?> 页,共 <?php echo $totalpage?> 页</div>
+						<div class="left paddingleft5"><a href="<?php echo site_url()?>/admin/post/<?php echo $status?>/<?php echo $tag_?>/<?php echo $date_?>/<?php echo $nextpage?>"><div class="link_button paddingb">›</div></a></div>
+						<div class="left paddingleft5"><a href="<?php echo site_url()?>/admin/post/<?php echo $status?>/<?php echo $tag_?>/<?php echo $date_?>/<?php echo $lastpage?>"><div class="link_button paddingb">»</div></a></div>
 						<div style="clear:both;"></div>
 					</div>
 					<div style="clear:both;"></div>
@@ -58,9 +58,9 @@
 					<table id="list" colspan=0 rowspan=0 cellpadding=0 cellspacing=0 class="a1">
 						<tr class="a2">
 							<td class="a3 a8"><input type="checkbox" name="opids"/></td>
-							<td class="a3"><?=$this->lang->line("title")?></td>
-							<td class="a3" style="width:25%;"><?=$this->lang->line("label")?></td>
-							<td class="a3" style="width:15%;"><?=$this->lang->line("time")?></td>
+							<td class="a3"><?php echo $this->lang->line("title")?></td>
+							<td class="a3" style="width:25%;"><?php echo $this->lang->line("label")?></td>
+							<td class="a3" style="width:15%;"><?php echo $this->lang->line("time")?></td>
 						</tr>
 						<?php for($i=0;$i<count($list);$i++):
 									$id=$list[$i]->id;
@@ -69,31 +69,31 @@
 										$color="a6";
 									}
 						?>
-						<tr class="a4 <?=$color?>">
-							<td class="a8"><input type="checkbox" name="opid[]" value="<?=$id?>"/></td>
+						<tr class="a4 <?php echo $color?>">
+							<td class="a8"><input type="checkbox" name="opid[]" value="<?php echo $id?>"/></td>
 							<td style="">
-								<a href="<?=site_url()?>/admin/addPost/<?=$id?>" class="rightmenunochecked"><?php echo $list[$i]->title;?></a>
+								<a href="<?php echo site_url()?>/admin/addPost/<?php echo $id?>" class="rightmenunochecked"><?php echo $list[$i]->title;?></a>
 							</td>
 							<td style="width:25%;">
 								<?php for($j=0;$j<count($list[$i]->tags);$j++):
 											$tags=$list[$i]->tags;
 								?>
-								<a href="<?=site_url()?>/admin/post/<?=$status?>/<?php echo $tags[$j]->tag;?>/_/0" class="rightmenunochecked" style="font-size:12px;"><?php echo $tags[$j]->tag;?></a><?php echo $j==count($list[$i]->tags)-1?"":",";?>
+								<a href="<?php echo site_url()?>/admin/post/<?php echo $status?>/<?php echo $tags[$j]->tag;?>/_/0" class="rightmenunochecked" style="font-size:12px;"><?php echo $tags[$j]->tag;?></a><?php echo $j==count($list[$i]->tags)-1?"":",";?>
 								<?php endfor;?>
 							</td>
 							<td style="width:15%;"><?php echo substr($list[$i]->pub_time, 0,10);?></td>
 						</tr>
-						<tr class="a4 a5 <?=$color?>">
+						<tr class="a4 a5 <?php echo $color?>">
 							<td class="a3"></td>
 							<td class="a3 a9">
-								<div class="link_button left" style="display:none;"><a href="<?=site_url()?>/admin/addPost/<?=$id?>"><?=$this->lang->line("edit")?></a></div>
+								<div class="link_button left" style="display:none;"><a href="<?php echo site_url()?>/admin/addPost/<?php echo $id?>"><?php echo $this->lang->line("edit")?></a></div>
 								<?php if(intval($status)==3):?>
-								<div class="link_button left" style="display:none;"><a href="<?=site_url()?>/admin/recycle/post/<?=$status?>/<?=$id?>/publish"><?=$this->lang->line("revert")?></a></div>
-								<div class="link_button left" style="display:none;"><a href="<?=site_url()?>/admin/recycle/post/<?=$status?>/<?=$id?>/delete"><?=$this->lang->line("delete")?></a></div>
+								<div class="link_button left" style="display:none;"><a href="<?php echo site_url()?>/admin/recycle/post/<?php echo $status?>/<?php echo $id?>/publish"><?php echo $this->lang->line("revert")?></a></div>
+								<div class="link_button left" style="display:none;"><a href="<?php echo site_url()?>/admin/recycle/post/<?php echo $status?>/<?php echo $id?>/delete"><?php echo $this->lang->line("delete")?></a></div>
 								<?php else:?>
-								<div class="link_button left" style="display:none;"><a href="<?=site_url()?>/admin/recycle/post/<?=$status?>/<?=$id?>"><?=$this->lang->line("recycle")?></a></div>								
+								<div class="link_button left" style="display:none;"><a href="<?php echo site_url()?>/admin/recycle/post/<?php echo $status?>/<?php echo $id?>"><?php echo $this->lang->line("recycle")?></a></div>								
 								<?php endif;?>
-								<div class="link_button left" style="display:none;"><a href="<?=site_url()?>/main/detail/<?=$id?>"><?=$this->lang->line("view")?></a></div>
+								<div class="link_button left" style="display:none;"><a href="<?php echo site_url()?>/main/detail/<?php echo $id?>"><?php echo $this->lang->line("view")?></a></div>
 							</td>
 							<td class="a3"></td>
 							<td class="a3"></td>
@@ -102,40 +102,40 @@
 						
 						<tr class="a2">
 							<td class="a8"><input type="checkbox" name="opids"/></td>
-							<td><?=$this->lang->line("title")?></td>
-							<td style="width:25%;"><?=$this->lang->line("label")?></td>
-							<td style="width:15%;"><?=$this->lang->line("time")?></td>
+							<td><?php echo $this->lang->line("title")?></td>
+							<td style="width:25%;"><?php echo $this->lang->line("label")?></td>
+							<td style="width:15%;"><?php echo $this->lang->line("time")?></td>
 						</tr>
 					</table>
 				</div>
 				<div class="textalignleft" style="padding-top:5px;">
 					<div class="left">
 						<select name="method">
-							<option value="1"><?=$this->lang->line("bulk_operations")?></option>
+							<option value="1"><?php echo $this->lang->line("bulk_operations")?></option>
 							<?php if($status==3):?>
-							<option value="delete"><?=$this->lang->line("delete")?></option>
-							<option value="publish"><?=$this->lang->line("revert")?></option>
+							<option value="delete"><?php echo $this->lang->line("delete")?></option>
+							<option value="publish"><?php echo $this->lang->line("revert")?></option>
 							<?php else:?>
-							<option value="recycle"><?=$this->lang->line("recycle")?></option>
+							<option value="recycle"><?php echo $this->lang->line("recycle")?></option>
 							<?php endif;?>
 						</select>
-						<input type="submit" value="<?=$this->lang->line("apply")?>"/>
+						<input type="submit" value="<?php echo $this->lang->line("apply")?>"/>
 					</div>
 					<div class="right a11">
-						<div class="left lineheight25">共 <?=$cnt?> 项</div>
-						<div class="left paddingleft10"><a href="<?=site_url()?>/admin/post/<?=$status?>/<?=$tag_?>/<?=$date_?>/<?=0?>"><div class="link_button paddingb">«</div></a></div>
-						<div class="left paddingleft5"><a href="<?=site_url()?>/admin/post/<?=$status?>/<?=$tag_?>/<?=$date_?>/<?=$prevpage?>"><div class="link_button paddingb">‹</div></a></div>
-						<div class="left lineheight25">第 <?=$currentpage?> 页,共 <?=$totalpage?> 页</div>
-						<div class="left paddingleft5"><a href="<?=site_url()?>/admin/post/<?=$status?>/<?=$tag_?>/<?=$date_?>/<?=$nextpage?>"><div class="link_button paddingb">›</div></a></div>
-						<div class="left paddingleft5"><a href="<?=site_url()?>/admin/post/<?=$status?>/<?=$tag_?>/<?=$date_?>/<?=$lastpage?>"><div class="link_button paddingb">»</div></a></div>
+						<div class="left lineheight25">共 <?php echo $cnt?> 项</div>
+						<div class="left paddingleft10"><a href="<?php echo site_url()?>/admin/post/<?php echo $status?>/<?php echo $tag_?>/<?php echo $date_?>/<?php echo 0?>"><div class="link_button paddingb">«</div></a></div>
+						<div class="left paddingleft5"><a href="<?php echo site_url()?>/admin/post/<?php echo $status?>/<?php echo $tag_?>/<?php echo $date_?>/<?php echo $prevpage?>"><div class="link_button paddingb">‹</div></a></div>
+						<div class="left lineheight25">第 <?php echo $currentpage?> 页,共 <?php echo $totalpage?> 页</div>
+						<div class="left paddingleft5"><a href="<?php echo site_url()?>/admin/post/<?php echo $status?>/<?php echo $tag_?>/<?php echo $date_?>/<?php echo $nextpage?>"><div class="link_button paddingb">›</div></a></div>
+						<div class="left paddingleft5"><a href="<?php echo site_url()?>/admin/post/<?php echo $status?>/<?php echo $tag_?>/<?php echo $date_?>/<?php echo $lastpage?>"><div class="link_button paddingb">»</div></a></div>
 						<div style="clear:both;"></div>
 					</div>
 					<div style="clear:both;"></div>
 				</div>
 			</div>
 		</div>
-		<input type="hidden" name="status" value="<?=$status?>">
-		<input type="hidden" name="status" value="<?=$status?>">
+		<input type="hidden" name="status" value="<?php echo $status?>">
+		<input type="hidden" name="status" value="<?php echo $status?>">
 		<input type="hidden" name="post_or_page" value="post">
 		
 		</form>
